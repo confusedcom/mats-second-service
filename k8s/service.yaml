@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mats-second-service
+  namespace: ★ Developer Experience And Enablement
+  labels:
+    app: mats-second-service
+    team: ★ Developer Experience And Enablement
+    managed-by: conf
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+spec:
+  type: ClusterIP
+  selector:
+    app: mats-second-service
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: http
+  sessionAffinity: None

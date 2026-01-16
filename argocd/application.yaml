@@ -1,0 +1,61 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mats-second-service
+  namespace: argocd
+  labels:
+    app: mats-second-service
+    team: ★ Developer Experience And Enablement
+    managed-by: conf
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  # Project the application belongs to
+  project: default
+
+  # Source repository configuration
+  source:
+    # Git repository URL
+    repoURL: https://github.com/confusedcom/mats-second-service.git
+
+    # Target revision (branch, tag, or commit SHA)
+    targetRevision: HEAD
+
+    # Path within the repository
+    path: /
+
+  # Destination cluster and namespace
+  destination:
+    # Kubernetes server URL (use 'https://kubernetes.default.svc' for in-cluster)
+    server: https://kubernetes.default.svc
+
+    # Target namespace
+    namespace: ★ Developer Experience And Enablement
+
+  # Sync policy configuration
+  syncPolicy:
+
+    # Sync options
+    syncOptions:
+    # Create namespace if it doesn't exist
+    - CreateNamespace=true
+
+    # Prune resources that are no longer in git
+    - PruneLast=false
+
+    # Preserve resource deletion order
+    - PrunePropagationPolicy=foreground
+
+    # Retry policy for failed syncs
+    retry:
+      # Maximum number of attempts
+      limit: 5
+
+      # Backoff configuration
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+
+  # Revision history limit
+  revisionHistoryLimit: 10

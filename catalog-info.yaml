@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mats-second-service
+  description: Dummy service
+  annotations:
+    github.com/project-slug: https://github.com/confusedcom/mats-second-service.githhttps://github.com/confusedcom/mats-second-service.gitthttps://github.com/confusedcom/mats-second-service.gitthttps://github.com/confusedcom/mats-second-service.gitphttps://github.com/confusedcom/mats-second-service.gitshttps://github.com/confusedcom/mats-second-service.git:https://github.com/confusedcom/mats-second-service.git/https://github.com/confusedcom/mats-second-service.git/https://github.com/confusedcom/mats-second-service.gitghttps://github.com/confusedcom/mats-second-service.gitihttps://github.com/confusedcom/mats-second-service.gitthttps://github.com/confusedcom/mats-second-service.githhttps://github.com/confusedcom/mats-second-service.gituhttps://github.com/confusedcom/mats-second-service.gitbhttps://github.com/confusedcom/mats-second-service.git.https://github.com/confusedcom/mats-second-service.gitchttps://github.com/confusedcom/mats-second-service.gitohttps://github.com/confusedcom/mats-second-service.gitmhttps://github.com/confusedcom/mats-second-service.git/https://github.com/confusedcom/mats-second-service.git
+    argocd/app-name: mats-second-service
+    backstage.io/kubernetes-id: mats-second-service
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - go
+    - ★ developer experience and enablement
+    - go
+    - ★ developer experience and enablement
+  labels:
+    team: ★ developer experience and enablement
+    environment: production
+spec:
+  type: service
+  lifecycle: production
+  owner: ★ developer experience and enablement
+  system: ★ developer experience and enablement
+  links:
+    - url: https://github.com/confusedcom/mats-second-service.git
+      title: Repository
+      icon: github
+    - url: https://argocd.example.com/applications/mats-second-service/applications/mats-second-service
+      title: ArgoCD
+      icon: deployment
